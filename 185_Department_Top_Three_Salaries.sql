@@ -1,0 +1,2 @@
+-- Write your PostgreSQL query statement below
+select Department.name as Department, e.name as Employee, salary from Employee e join Department on departmentId = Department.id where salary in (select distinct salary from Employee where departmentId = e.departmentId order by salary desc limit 3)
