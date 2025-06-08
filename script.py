@@ -6,4 +6,4 @@ while True:
         continue
     arr[0] = arr[0][:-1]
     time.sleep(0.05)
-    print("_".join(arr))
+    print("_".join(arr) + ".py")

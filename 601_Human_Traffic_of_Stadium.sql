@@ -1,0 +1,2 @@
+-- Write your PostgreSQL query statement below
+select distinct one.* from Stadium one, Stadium two, Stadium three where one.people >= 100 and two.people >= 100 and three.people >= 100 and ((one.id - two.id = 1 and two.id - three.id = 1) or (three.id - two.id = 1 and two.id - one.id = 1) or (two.id - one.id = 1 and one.id - three.id = 1)) order by visit_date
