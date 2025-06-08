@@ -1,0 +1,2 @@
+-- Write your PostgreSQL query statement below
+select request_at as Day, round(sum(case when status = 'completed' then 0 else 1 end) * 1.0 / count(*), 2) as "Cancellation Rate" from Trips join Users c on client_id = c.users_id join Users d on driver_id = d.users_id where c.banned = 'No' and d.banned = 'No' and request_at in ('2013-10-01', '2013-10-02', '2013-10-03') group by request_at
