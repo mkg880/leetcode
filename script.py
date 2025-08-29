@@ -9,9 +9,9 @@ while True:
     if s.lower() == 'done':
         repo.index.add([file_name])
         repo.index.commit(f"added {num}")
-        # repo.remotes[0].push()
         current_branch = repo.active_branch.name
         repo.remotes.origin.push(refspec=f"HEAD:refs/heads/{current_branch}")
+        print('committed!')
     else:
         arr = s.split()
         arr[0] = arr[0][:-1]
